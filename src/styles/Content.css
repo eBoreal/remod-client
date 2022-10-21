@@ -1,0 +1,180 @@
+body {
+    background-color: black;
+}
+
+
+.Home {
+    width:77% !important;
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    color: #f35;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+
+}
+
+
+.Instructions{
+    background-color: rgb(68, 51, 238, .4);
+    border-radius: 8pt !important;
+    padding: 2%;
+    display:flex !important;
+    flex-direction:column !important;
+}
+
+.white-font {
+    color: white;
+}
+
+.pink-font {
+    color: #f35;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.userName {
+    background-color: rgb(68, 51, 238, .8);
+    padding: 1%;
+    border-radius: 8pt !important;
+}
+
+
+.PageFooter {
+    font-style: italic;
+    float: right;
+    margin-top: 5%;
+    justify-content: center !important;
+    color: white;
+}
+
+.PageSnap {
+    width:66% !important;
+    padding-top: 5%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+    background-color: rgb(41,41,41,.9);
+    border-radius: 8pt !important;
+}
+
+
+.Content {
+    all: revert;
+    width: 80% !important;
+    background: radial-gradient(
+        farthest-corner at 40px 40px,#f35 0%,rgb(68, 51, 238) 100%) !important;
+    border-radius: 8pt !important;
+    padding: 0.5rem !important;
+    overflow-wrap: break-word !important;
+    font-size: 16px !important;
+    --remodmarker:remod-native;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.CommentRow {
+    display: flex;
+    font-style: transparent;
+}
+
+.UserIcon{
+    margin-top: auto;
+    border-radius: 50%;
+    min-width: 25px;
+    min-height: 25px;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+}
+
+.Comment {
+    border-radius: 10pt;
+    min-width: 30%;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255,255,255,.1);
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+    color: rgb(0, 0, 0) !important;
+}
+
+.Author {
+    font-style: oblique;
+    font-weight: bold;
+    color: rgb(0, 0, 0) !important;
+}
+
+.CommentText {
+    font-style: normal !important;
+    color: rgb(0, 0, 0) !important;
+    font-weight: 400 !important;
+}
+
+.InputArea {
+    font-style: normal !important;
+    display: flex;
+    padding: 0.5rem;
+    background: transparent;
+    border-radius: inherit;
+    border-style: solid;
+    border-width: 0.05em;
+    border-color: #1e1e1e !important;
+}
+
+.InputText{
+    flex-grow: 100;
+    overflow-y: hidden;
+    background: inherit;
+    resize: none;
+    outline: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: rgb(0, 0, 0) !important;
+    font-weight: 400 !important;
+    height: 28px;
+}
+
+.InputButton{
+    margin-left: auto;
+    background: inherit;
+    border: none;
+    float: bottom right;
+    color: #f35 !important;
+    font-size: inherit;
+    font-weight: bold;
+}
+
+textarea::placeholder {
+    color: #1e1e1e !important;
+    font-weight: 400 !important;
+  }
+
+.Comment, .InputArea {
+    margin: 0.5rem;
+}
+
+
+.mini-left-text{
+    float:left;
+}
+
+.mini-right-text{
+    float:right;
+}
+
+.mini-left-text, .mini-right-text{
+    margin-top: 0.3rem;
+    font-weight: 400;
+    color: #1e1e1e !important;
+    padding-bottom: 0.3rem;
+    font-size: 12px;    
+    background: transparent;
+    border: none;
+}
