@@ -27,7 +27,8 @@ export default function Home() {
   }
 
   async function getComments(route) {
-    const res = await fetch(route)
+    const res = await fetch(route, 
+      {mode:'no-cors'})
     const comments = await res.json()
     console.log(comments)
     const byUrlandBoxes = mapToBoxes(comments)
