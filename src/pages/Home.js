@@ -1,22 +1,35 @@
 import React, { useEffect, useState } from 'react'
-import PageSnap from '../components/PageSnap';
+import Feed from '../components/Feed'
 import '../styles/Content.css';
-
+import PageHeader from '../components/PageHeader'
+import CommentList from '../components/CommentList';
 
 export default function Home() {
   const [backendData, setbackendData] = useState([{}])
+  const [userId, setUserId] = useState(null)
+  const [route, setRoute] = useState(null)
+
+  useEffect( () => {
+    console.log(route)
+    if (route) getComments(route);
+  }, [route])
   
   useEffect( () => {
-    getAllComments()
-  }, [])
+    if (userId) {
+      setRoute(`/api/comments/getByUser/${userId}`)
+    } else {
+      setRoute("/api/comments/getAll")
+    }
+  }, [userId])
 
   function onClickUser(userId) {
-    window.location.href = `/${userId}`
+    setUserId(userId)
   }
 
-  async function getAllComments() {
-    const res = await fetch("/api/comments/getAll")
+  async function getComments(route) {
+    const res = await fetch(route)
     const comments = await res.json()
+    console.log(comments)
     const byUrlandBoxes = mapToBoxes(comments)
     setbackendData({byUrlandBoxes})
   }
@@ -40,33 +53,11 @@ export default function Home() {
   if (!(backendData.byUrlandBoxes)) return (<p>loading...</p>)
 
   return (
-    <div className="Home">
-      <h1 className='pink-font'> Welcome to Remod [Beta] ! </h1>
-      <div className='Instructions'>
-        <h2 className='white-font'> A couple things you can do here... </h2>
-        <ul className='white-font'>
-          <li> Browse the list of web pages that were commented via remod </li>
-          <li> Navigate to their profile page (click on their names)</li>
-          <li> Navigate to the website where these comments are injected  (click on url at the bottom of each comment box)
-          </li>
-        </ul>
-        <ul className='pink-font'>
-          <li> You will need to install the chrome extension to see those boxes on the page </li>
-          <li> Create an account via the extension pop-up to contribute ;) </li>
-        </ul>
-        <ul className='white-font'>
-          <li> <a className='white-font'  href='https://github.com/eBoreal/remod-browser-extension'>Github</a></li>
-          <li> <a className='white-font' >Notion</a> </li>
-        </ul>
-
-      </div>
-      {backendData.byUrlandBoxes && Object.entries(backendData.byUrlandBoxes).map(
-        ([url, pageBoxes]) => {
-            return <PageSnap key={url} 
-                    url={url} boxes={pageBoxes} 
-                    onClickUser={onClickUser}/>
-        }
-      )
+    <div className='AppContainer'>
+      <PageHeader isHomeCurrent={true} currentUserId={userId}
+      onClickUser={onClickUser}/>
+      {backendData.byUrlandBoxes && <Feed data={backendData.byUrlandBoxes} 
+      onClickUser={onClickUser}></Feed>
       }
     </div>
   )

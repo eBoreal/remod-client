@@ -1,3 +1,4 @@
+import { createBrowserHistory } from '@remix-run/router'
 import React from 'react'
 import CommentList from './CommentList'
 
@@ -10,7 +11,7 @@ export default function PageSnap( {url, boxes, onClickUser} ) {
                 <CommentList comments={boxToShow[1]} onClickUser={onClickUser}/>
             </div>
             <div className='PageFooter'> 
-                {"Generated at -->"}  <a className='white-font' href={url}> {url} </a>
+                <a href={url} className='linkToPage'> {url} </a>
             </div>
         </div>
     )
