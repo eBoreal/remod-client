@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Feed from '../components/Feed'
 import '../styles/Content.css';
 import PageHeader from '../components/PageHeader'
-import CommentList from '../components/CommentList';
 
 export default function Home() {
   const [backendData, setbackendData] = useState([{}])
@@ -30,7 +29,6 @@ export default function Home() {
     const res = await fetch(route, 
       {mode:'no-cors'})
     const comments = await res.json()
-    console.log(comments)
     const byUrlandBoxes = mapToBoxes(comments)
     setbackendData({byUrlandBoxes})
   }
@@ -55,8 +53,7 @@ export default function Home() {
 
   return (
     <div className='AppContainer'>
-      <PageHeader isHomeCurrent={true} currentUserId={userId}
-      onClickUser={onClickUser}/>
+      <PageHeader currentUserId={userId} onClickUser={onClickUser}/>
       {backendData.byUrlandBoxes && <Feed data={backendData.byUrlandBoxes} 
       onClickUser={onClickUser}></Feed>
       }
