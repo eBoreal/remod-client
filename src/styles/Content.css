@@ -1,5 +1,5 @@
 body {
-    background: rgb(255, 51, 85, .1);
+    background-color: rgb(65, 187, 239, .1);
 }
 
 .AppContainer {
@@ -21,9 +21,9 @@ body {
     position: relative;
     font-size: 16px;
     font-family: 'Inter custom',sans-serif;
-    /* background-image: linear-gradient(transparent 50%, rgb(255, 255, 255) 50%); */
     background-position: 0px -100%;
     background-size: 100% 200%;
+    width:100%;
 }
 
 .app-nav-bar {
@@ -36,6 +36,7 @@ body {
 .app-ext-links{
     justify-self: flex-end;
     margin: 2px;
+    margin-right: 30px;
     justify-content: space-between;
     padding: 6px 8px;
     display: flex;
@@ -52,7 +53,6 @@ a {
     font-weight: 500;
     justify-content: center;
     color: rgb(0, 0, 0);
-    background-color: rgb(255, 51, 85, .3);
     padding: 8px 12px;
     word-break: break-word;
     overflow: hidden;
@@ -63,7 +63,7 @@ a {
 }
 
 a:hover {
-    background-color: rgb(255, 51, 85, .8);
+    background-color: rgb(255, 255, 51, .8);
 }
 
 a:active{
@@ -73,7 +73,6 @@ a:active{
 .linkToPage {
     width: 100%;
     text-align: center;
-    background-color: rgb(68, 51, 238, .2);
 }
 
 
@@ -88,9 +87,9 @@ a:active{
 
 
 .PageSnap {
-    padding: 10px;
+    padding: 20px;
     width: 60%;
-    background-color: rgba(232, 226, 227, 0.4);
+    background-color: rgb(65, 187, 239, .3);
     border-radius: 8pt !important;
     flex: auto;
 }
@@ -103,8 +102,10 @@ a:active{
 
 
 .Content {
+    /* background: radial-gradient(
+        farthest-corner at 40px 40px,#f35 0%,rgb(68, 51, 238) 100%) !important; */
     background: radial-gradient(
-        farthest-corner at 40px 40px,#f35 0%,rgb(68, 51, 238) 100%) !important;
+        farthest-corner at 40px 40px,rgb(48, 152, 207) 0%,rgb(65, 187, 239) 100%) !important;
     border-radius: 8pt !important;
     padding: 1rem !important;
     overflow-wrap: break-word !important;
