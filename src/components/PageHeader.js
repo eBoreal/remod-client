@@ -1,43 +1,22 @@
 import React, { useState } from 'react'
+import Logo from "../assets/logo-remod48.png"
 
 export default function PageHeader( {currentUserId, onClickUser} ) {
-    const [navButtons, setNavButtons] = useState(
-        [
-            {name:"Feed", value:"Feed", current:true}, 
-            {name:"Users", value:currentUserId, current:false},
-        ]
-    )
-    const [extButtons, setExtButtons] = useState(
-        [
-            {name:"Github", value:"Github", current:true, href:'https://github.com/eBoreal/remod-browser-extension'}, 
-            {name:"Notion", value:"Notion", current:false, href:'/'},
-        ]
-    )
-
     function handleClickButton() {
         onClickUser(null)
     }
 
     return (
         <div className='app-main-header'>
-            <div>Icon</div>
+            <img src={Logo}></img>
             <div className='app-nav-bar'> 
-                {
-                    navButtons.map(button => {
-                        return <a key={button.name}
-                                onClick={handleClickButton}
-                                > {button.value}</a>
-                    })
-                }  
+                <a onClick={handleClickButton}>Feed</a>
+                <a onClick={handleClickButton}>{currentUserId}</a>
+
             </div>
             <div className='app-ext-links'> 
-                {
-                    extButtons.map(button => {
-                        return <a key={button.name}
-                                href={button.href}
-                                > {button.value}</a>
-                    })
-                }  
+                <a href='https://github.com/eBoreal/remod-browser-extension'>Github</a>
+                <a href='/'>Notion</a>
             </div>
         </div>
     )

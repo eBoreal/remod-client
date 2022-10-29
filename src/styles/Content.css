@@ -1,5 +1,6 @@
 body {
     background-color: rgb(65, 187, 239, .1);
+    font-family: sans-serif !important;
 }
 
 .AppContainer {
@@ -19,11 +20,12 @@ body {
     padding: 1rem;
     z-index: 21;
     position: relative;
-    font-size: 16px;
+    font-size: 17px;
     font-family: 'Inter custom',sans-serif;
     background-position: 0px -100%;
     background-size: 100% 200%;
     width:100%;
+    background-color: rgb(127, 192, 220, .2);
 }
 
 .app-nav-bar {
