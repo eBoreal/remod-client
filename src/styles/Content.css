@@ -89,7 +89,7 @@ a:active{
 .PageSnap {
     padding: 20px;
     width: 60%;
-    background-color: rgb(65, 187, 239, .3);
+    background-color: rgb(127, 192, 220, .2);
     border-radius: 8pt !important;
     flex: auto;
 }
@@ -105,12 +105,12 @@ a:active{
     /* background: radial-gradient(
         farthest-corner at 40px 40px,#f35 0%,rgb(68, 51, 238) 100%) !important; */
     background: radial-gradient(
-        farthest-corner at 40px 40px,rgb(48, 152, 207) 0%,rgb(65, 187, 239) 100%) !important;
+        farthest-corner at 40px 40px,rgb(156, 196, 216),rgb(127, 192, 220)) !important;
     border-radius: 8pt !important;
     padding: 1rem !important;
     overflow-wrap: break-word !important;
     font-size: 16px !important;
-    width: 95% !important;
+    width: 90% !important;
     justify-content: center;
     margin-top: 10px;
     margin-left: auto;

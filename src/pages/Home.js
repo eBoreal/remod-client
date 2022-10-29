@@ -29,8 +29,10 @@ export default function Home() {
     const res = await fetch(route, 
       {mode:'no-cors'})
     const comments = await res.json()
-    const byUrlandBoxes = mapToBoxes(comments)
-    setbackendData({byUrlandBoxes})
+    if (comments) {
+      const byUrlandBoxes = mapToBoxes(comments)
+      setbackendData({byUrlandBoxes})
+    }
   }
 
   function mapToBoxes(comments) {
